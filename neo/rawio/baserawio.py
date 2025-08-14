@@ -712,9 +712,9 @@ class BaseRawIO:
                 )
 
             # also check that channel_id is unique inside a stream
-            channel_ids = signal_channels[mask]["id"]
-            if np.unique(channel_ids).size != channel_ids.size:
-                raise ValueError(f"signal_channels do not have unique ids for stream {stream_index}")
+            channel_names = signal_channels[mask]["name"]
+            if np.unique(channel_names).size != channel_names.size:
+                raise ValueError(f"signal_channels do not have unique names for stream {stream_index}")
 
         self._several_channel_groups = signal_streams.size > 1
 
